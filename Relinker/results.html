@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processed Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 600px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        h3 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+        .back-button {
+            margin-top: 20px;
+            background-color: #555;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>Processing Complete!</h1>
+    <h3>Renamed Files:</h3>
+    {% if renamed_files %}
+    <ul>
+        {% for old_name, new_name in renamed_files %}
+        <li>{{ old_name }} → {{ new_name }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No files were renamed.</p>
+    {% endif %}
+    <br>
+    <a href="/download/{{ html_file }}" download>Download Updated HTML</a>
+    <br>
+    <!-- Back to Home Button -->
+    <a href="/" class="back-button">Back to Home</a>
+</body>
+</html>

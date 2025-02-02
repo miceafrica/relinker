@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Processor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 600px;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 8px;
+            width: 100%;
+            max-width: 100%;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Your Zip File</h1>
+    <form action="/process" method="post" enctype="multipart/form-data">
+        <!-- Input for Rename Value -->
+        <label for="rename_value">Rename Value:</label>
+        <input 
+            type="text" 
+            id="rename_value" 
+            name="rename_value" 
+            placeholder="Enter a rename value (e.g., project123)" 
+            required>
+        
+        <!-- Input for Zip File -->
+        <label for="zip_file">Select Zip File:</label>
+        <input 
+            type="file" 
+            id="zip_file" 
+            name="zip_file" 
+            accept=".zip" 
+            required>
+        
+        <!-- Submit Button -->
+        <button type="submit">Process</button>
+    </form>
+</body>
+</html>
